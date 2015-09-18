@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>RWE AG Share Price Information</title>
+
+		<meta name="description" content="RWE Share Price Information">
+		<meta name="author" content="stark-developments.co.uk">
+		<meta name="robots" content="NOINDEX, NOFOLLOW">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/cyborg-bootstrap.min.css">		
+	</head>
+	<body>
+		<noscript>
+			Sorry Javascript is required.
+		</noscript>
+		
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-12">
+					<nav class="navbar navbar-default" role="navigation">
+						<div class="navbar-header">
+							 <img src="http://www.rwe.com/web/cms/contentblob/1371590/data/81280/logo-en.png" class="img-responsive navbar-brand" alt="RWE Logo">							 
+						</div>
+					</nav>
+				</div>
+			</div>
+			
+			<div class="row">		
+				<div class="col-md-12">
+					<div class="jumbotron">
+						<p class="text-right"><a class="btn btn-default btn-xs" onClick="refreshStats();" role="button"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></a></p>
+					
+						<h1>RWE Share Price</h1>					 
+
+						<h2>
+							<span class="glyphicon glyphicon-euro" aria-hidden="true"></span>&nbsp;<span title="EUR Price" id="lastPriceEUR"></span>
+						</h2>						
+
+						<h3>
+							<span class="glyphicon glyphicon-gbp" aria-hidden="true"></span>&nbsp;<span title="GBP Price" id="lastPriceGBP"></span>
+						</h3>
+						
+						<h5>
+							<span class="glyphicon" id="movement"></span>&nbsp;<span title="Price Change %" id="priceChange"></span>
+						</h5>
+									 					 
+						<br />
+						<p><small><span class="glyphicon glyphicon-time" aria-hidden="true"></span>&nbsp;<span title="Last Traded Time" id="lastTradedTime"></span></small></p>
+					</div>				
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-md-12">
+					 <p><a href="http://aws.amazon.com/what-is-cloud-computing"><img class="img-responsive center-block" src="http://awsmedia.s3.amazonaws.com/AWS_logo_poweredby_black_127px.png" alt="Powered by AWS Cloud Computing"></a></p>
+					 <p class="text-center"><a href="https://openexchangerates.org/">FX Rates Provided By Open Exchange Rates.</a></p>
+				</div>
+			</div>			
+		</div>	
+	
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>	
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>		
+		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+		<!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>-->
+		<script type="text/javascript" src="http://openexchangerates.github.io/money.js/money.min.js"></script>	
+		<script type="text/javascript" src="js/prices.min.js"></script>	
+
+		<script>
+			$(function() {
+				updateStats();
+				
+				setInterval(function(){	
+					updateStats();
+					},60000);
+			});
+		</script>
+	</body>
+</html>
